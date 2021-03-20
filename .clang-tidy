@@ -1,0 +1,3 @@
+---
+Checks:            '*,-android-*,-fuchsia-*,-google-*,-zircon-*,-abseil-*,-modernize-use-trailing-return-type,-llvm*'
+FormatStyle:       file
