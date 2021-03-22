@@ -31,7 +31,6 @@ public:
         Test::SetUp();
         spy = std::make_unique<QSignalSpy>(&widget, &DemoWidget::sendText);
         widget.show();
-        widget.raise();
     }
 
     void typeCharacter(char key) {
