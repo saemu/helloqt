@@ -3,7 +3,7 @@ Simple demo to show how to test a Qt Widget with Google Test.
 
 ## Setup Instructions
 ### Qt Installation
-Use the Qt Maintance Tool to install the latest version of the Qt Framework.
+Use the [Qt Maintenance Tool](https://www.qt.io/download) to install the latest version of the [Qt Framework](https://www.qt.io).
 
 ### Conan
 ```shell
