@@ -16,7 +16,7 @@ include( ${CMAKE_BINARY_DIR}/conan.cmake )
 
 conan_cmake_configure( REQUIRES
                        qt/6.2.1
-                       gtest/1.10.0
+                       gtest/1.11.0
                        GENERATORS cmake_find_package
                        OPTIONS qt:shared=True
                        )
