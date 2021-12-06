@@ -1,10 +1,5 @@
 cmake_minimum_required( VERSION 3.17 )
 
-if( NOT CMAKE_PREFIX_PATH)
-    message( ERROR "CMAKE_PREFIX_PATH is not defined, you may need to set it "
-             "(-DCMAKE_PREFIX_PATH=\"path/to/Qt/lib/cmake\" or -DCMAKE_PREFIX_PATH=/usr/include/{host}/qt{version}/ on Ubuntu)" )
-endif()
-
 project( helloqt )
 
 if( NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake" )
@@ -20,8 +15,10 @@ include( cmake/compiler_settings.cmake )
 include( ${CMAKE_BINARY_DIR}/conan.cmake )
 
 conan_cmake_configure( REQUIRES
+                       qt/6.2.1
                        gtest/1.10.0
                        GENERATORS cmake_find_package
+                       OPTIONS qt:shared=True
                        )
 conan_cmake_autodetect( CONAN_SETTINGS )
 
@@ -29,7 +26,7 @@ conan_cmake_install( PATH_OR_REFERENCE ${CMAKE_BINARY_DIR}
                      BUILD missing
                      SETTINGS ${CONAN_SETTINGS} )
 
-find_package( Qt5 COMPONENTS Widgets Test REQUIRED )
+find_package( Qt6 COMPONENTS Widgets Test REQUIRED )
 
 add_subdirectory( src )
 enable_testing()
